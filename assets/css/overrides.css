@@ -1,2 +1,3 @@
 a.close-modal {border-bottom:none}
 .modal {max-width:1000px}
+.modal img {display:block; width:100%; max-width:940px;}
