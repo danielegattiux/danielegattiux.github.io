@@ -47,9 +47,8 @@
 						<li><a href="#one">1. The Problem</a></li>
 						<li><a href="#two">2. Discovery</a></li>
 						<li><a href="#three">3. Design</a></li>
-						<li><a href="#four">4. Usability testing</a></li>
-						<li><a href="#five">5. QA</a></li>
-						<li><a href="#six">6. Outcome</a></li>
+						<li><a href="#four">4. QA</a></li>
+						<li><a href="#five">5. Outcome</a></li>
 					</ul>
 				</nav>
 				
@@ -65,13 +64,13 @@
 							<section id="one" class="first-section">
 							    
 								<div class="container video-container">
-								    <video src="/assets/videos/mm-device-management.mp4" loop="loop" autoplay="autoplay" preload="auto" style="cursor: auto; width: 45em; max-width: calc(100% - 1em); border-radius: 10px; display: block; object-fit: cover; background-color: transparent !important;  margin-bottom:2em"></video>
+								    <video src="/assets/videos/ai-website.mp4" loop="loop" autoplay="autoplay" preload="auto" style="cursor: auto; width: 45em; max-width: calc(100% - 1em); border-radius: 10px; display: block; object-fit: cover; background-color: transparent !important;  margin-bottom:2em"></video>
 									<h3>The Problem</h3>		
 										<article>
 											
 												
 											
-												<p>When this project launched, the most unique data source for equipment activity on this platform was their proprietary battery-powered sensors, which have to be physically installed on each machine near the engine. This allows for the collection of a wealth of data that other sources (e.g. manufacturer’s telemetry) don’t provide, or that are only available at longer intervals. It also provides consistent data for mixed fleets of vehicles from different manufacturers. The sensors also report diagnostic information about themselves (especially battery levels). However, at this stage such information was only available via the backend and inaccessible to customers, which was causing some significant issues both for them and for MachineMax:</p>
+												<p>This was an internal project, commissioned by the marketing team. Their main issue was the high effort required to generate viable leads, which were almost exclusively obtained by direct outreach or word of mouth. The main goal was to leverage the website to turn it into an effective marketing channel. An additional objective was to refresh the website’s appearance to bring it more in line with the company’s application UI standards, which we had codified in a design system.</p>
 												<ul>
 													<li>Due to the remote locations most of those sensors operated in (e.g. mines) connectivy was sporadic, so when a machine stopped reporting for a long period of time it was difficult to correctly identify the cause (e.g. sensor ran out of battery or fell off a machine, connectivity issues, malfunctions etc.);</li>
 													<li>If the reporting inconsistencies were not spotted quickly, it could result in large data gaps over time;</li>
@@ -82,22 +81,35 @@
 								</div>
 							</section>
 							
-							<!--  Qualitative User Research -->
+							<!--  Discovery -->
 							<section id="two">
 								<div class="container">
-									<h3>Discovery and User Research</h3>
-									
+									<h3>Discovery</h3>
+									    
 										<article>
-										    <p class="image fit"><img src="images/mm-user-research-1.jpg" alt="" /></p>
-											<p>I analysed feedback from various users and conducted a round of informal semi-structured interviews to ascertain what actions the users could perform to mitigate the known issues and what information we could provide to enable them. I then compiled the findings in a report to the product team which formed the basis of our plan of action for the project.</p>
-											<p>After presenting these findings we decided that a new dedicated section was needed for device management on the platform, as the existing ones only dealt with the fleet or user management.  </p>
-											
-											
-											
+										    <h4>Heuristic Evaluation</h4>
+										    <p class="image fit"><img src="images/ai-old.png" alt="" /></p>
+											<p>The first step was evaluating the existing version of the website using the 10 NNG heuristic criteria , with a particular focus on #6 (Recognition Rather than Recall) and #8 (Aesthetic and Minimalist Design), given the nature of our goals. I identified these as the main issues:
+											</p>
+											<ul>
+												<li>Excessive page nesting, particularly in the products section, which made it harder and longer to access the most interesting information for prospective clients;</li>
+												<li> Too many options in the main navigation menu, which hinders navigation by overwhelming users with choices;</li>
+												<li> The layout required users to scroll too much due to overly large font/image/buttons, and caused most of the content to be “below the fold” on the most common screen sizes;</li>
+												<li> Most pages were too busy, and included redundant content modules;</li>
+												<li> Branding was dated and not in line with the design system (e.g. inconsistent fonts/colours/styles), layouts and graphics looked unbalanced and awkward;</li>
+											</ul>
 										
 										</article>
 										
-										
+										<article>
+										    <h4>SEO and Content Review</h4>
+											<p>The marketing manager reviewed the website content to verify whether it aligned with their goals, and to spot any potential gaps. They also commissioned a SEO review to a specialised agency to assess the potential for organic traffic growth. Their main findings were:</p>
+											<ul>
+												<li>In the “Products section”, there was a page for a service which the company no longer offered;</li>
+												<li>Many content blocks were redudant as they were repeated like for like on several different pages of the website, including were there was no clear relationship between them and the main topic of the page itself. This not only impacted usability and user trust but also had a potentially adverse effect on SEO performance;</li>
+												</li>The page hierarchy was ineffective for SEO purposes due to the lack of desirable keywords at the top level for the products section.</li>
+											</ul>
+										</article>
 									
 								</div>
 							</section>
@@ -108,17 +120,21 @@
 									<h3>UX/UI Design and prototypes</h3>
 									
 										<article>
-										<p class="image fit"><img src="images/mm-wireframe-1.png" alt="" /></p>
-										<p>I envisioned the feature as a dashboard, highlighting items that needed attention and could be actioned with significant benefits either by the user or by thei collaborators (e.g. site managers). Originally, due to permissions constraints, the feature was meant to be a sub-page of the Admin section, although I recommended making it a main section whenever possible.</p>
-										<p class="image fit"><img src="images/mm-wireframe-2.png" alt="" /></p>
-										<p>I created some low-fi wireframes to mock-up the page in different states to illustrate the desired layout and functionality. Those were reviewed with the rest of the product team and the engineers and their feedback used to improve the design in the next phase.</p>
-										<p class="image fit"><img src="images/mm-wireframe-3.png" alt="" /></p>
-										<p>As the UI could be executed using existing components and patterns, I proceeded to create detailed hi-fidelity mockups of the page and its individual components, detailing their different states, including mobile/tablet versions.</p>
-										<p class="image fit"><img src="images/mmdm-dashboard.jpg" alt="" /></p>
-										<p>I reviewed the designs with the product and development team, and made some UI improvements based on their feedback. We found a technical solution to allow the page to have its own main section, which I called “Sensors” to make it as intuitive as possible.</p>
-										<p class="image fit"><img src="images/mmdm-dashboard-table.jpg" alt="" /></p>
-										<p class="image fit"><img src="images/mmdm-dashboard-mobile.jpg" alt="" /></p>
-
+										<h4>Information Architecture</h4>
+										
+										<p>I created a new navigation structure for the website with fewer main navigation items (5 vs 8), 2 of which represent the company’s main commercial offerings (Software and Data), with no generic “Products” main section. This now allows users to access the datasets details page with one interaction (hover on the main menu and click one of the dropdown options) instead of three. The new structure also aligns with the SEO requirements.</p>
+									
+										<h4>Low-fi wireframes</h4>
+										<p class="image fit"><img src="images/ai-wireframe-1.png" alt="" /></p>
+										<p>I created low-fi wireframes representing what I thought the main content modules and page templates were going to be. I reviewed them with the marketing team and after some amendments, we used them as a basis to decide which page templates were needed and which pages would use each of them. We also planned which content blocks were needed for each page and mapped instances were content was missing, obsolete or insufficient.</p>
+										
+										<h4>High-fidelity mockups</h4>
+										<p>I created high-fidelity mockups (with help from a junior designer), most of them with placeholder content as the actual assets (copy, photographs etc.) was being produced at the same time by the marketing team. </p>
+										<p class="image fit"><img src="images/aitlweb-banner.jpg" alt="" /></p>
+										<p>As soon as each template was completed, I reviewed it with the marketing and upper management teams for further improvements and populated it with the actual content. Finally, each mockup was reviewed by our chosen Web Developer to ensure feasibility and suggest any necessary changes prior to handover.</p>
+										<p class="image fit"><img src="images/ai-web-dataset.png" alt="" /></p>
+										<p class="image fit"><img src="images/ai-about.jpg" alt="" /></p>
+										<p class="image fit"><img src="images/ai-mobile.jpg" alt="" /></p>
 										</article>
 										
 										
@@ -126,34 +142,16 @@
 								</div>
 							</section>
 							
-							<!--  Usability testing -->
-							<section id="four">
-								<div class="container">
-									<h3>Usability testing</h3>
-									
-										<article>
-										
-										<p>I created a clickable prototype of the section and used it to conduct a round of usability testing with a sample of users. Testing didn’t highlight any particular usability issue in the designs, but it did solicit some ideas and requests for the development of a similar feature for other data sources, i.e. manufacturer’s telemetry and 3rd party tracking devices, which were added to the product backlog.</p>
-										
-										<p class="image fit">
-												<img src="images/mm-user-research-2.jpg" alt="" />
-									    </p>
-
-										</article>
-										
-										
-								
-								</div>
-							</section>
+						
 							
 							<!--  Code preview QA -->
-							<section id="five">
+							<section id="four">
 								<div class="container">
 									<h3>Code preview QA</h3>
 									
 										<article>
 										
-										<p>During the build phase, I participated in early QA on code preview versions of the product, to ensure alignment of the build with the UX goals and test functionality in a variety of situations (as I could connect the dashboard to real data sources from client accounts), and filed a few bug reports in the process.</p>
+										<p>During the build phase, I participated in early QA on code preview versions of each page template, to ensure alignment of the build with the UX goals.</p>
 
 										</article>
 										
@@ -163,16 +161,15 @@
 							</section>
 							
 							<!--  Outcome -->
-							<section id="six">
+							<section id="five">
 								<div class="container outcome">
 									<h3>Outcome</h3>
 									
 										<article>
-										<h4>70% fewer support tickets</h4>
-										<p>Support tickets related to sensor issues decreased by 70%, and were mostly confined to new users requiring more training and cases where the ultimate cause was known but required MachineMax intervention to resolve (e.g. the sensor needed to be replaced).</p>
+										<h4>400% more qualified leads</h4>
+										<p>The new version of the website is now live and has received positive feedback both internally and from new clients, but most importantly, it is now generating 4-5 qualified leads a month, mainly from prospective client cohorts which would not be worth targeting with active marketing activity, compared to less than 10/year which it would achieve previously. </p>
 										
-										<h4>20% increase in user satisfaction</h4>
-										<p>Customer success reported a 20% increase in user satisfaction with this feature. Surprisingly, this was driven in large part by site managers using the application on their mobile to check for anomalies that could be quickly resolved.</p>
+										
 										</article>
 										
 										
@@ -209,16 +206,16 @@
 											</a>
 											
 										</article>
-										<article>	
-													<a href="advanced-infrastructure-website-revamp.html" class=" box inner">
-													<div class="company-info">
-															   <img class="logo-box" src="images/ai-logo.png" alt="" />
-															   <span class="company-name">Advanced Infrastructure</span>
-													</div>
-														<h4>Advanced Infrastructure Website Revamp</h4>
-														<p><span class="tag">Web Design</span><span class="tag">Marketing</span><span class="tag">Lead Generation</span></p>
-														<img class="image" src="images/aitlweb-banner.jpg" alt="" />
-													</a>
+										<article>
+												<a href="device-management-feature-for-off-highway-equipment-management-platform.html" class="box inner">
+														<div class="company-info">
+															   <img class="logo-box" src="images/mm-logo.png" alt="" />
+															   <span class="company-name">MachineMax</span>
+														</div>
+														<h4>Device Management feature for off-highway equipment management platform</h4>
+														<p><span class="tag">IoT</span><span class="tag">SaaS</span><span class="tag">AI</span></p>
+														<img class="image" src="images/mmdm-banner.jpg" alt="" />
+												</a>
 										</article>
 									</div>
 								</div>
